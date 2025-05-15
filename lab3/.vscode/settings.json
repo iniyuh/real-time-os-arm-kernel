@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "k_inc.h": "c",
+        "common.h": "c",
+        "k_mem.h": "c",
+        "k_rtx.h": "c"
+    }
+}

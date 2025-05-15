@@ -1,0 +1,6 @@
+Name,PlannedHours,RealHours,Contributions
+Justin Vuong,20+,40+,Planning + UART + KCD + Function Logic + Debugging + Testing + Overall Bugfixes
+Benjamin Lu,20+,40+,Planning + Mailbox Functions + Function Logic + Debugging + Testing + Overall Bugfixes
+Ahsan Nadeem,20+,35+,Planning + RingBuffer & Waiting List Structure + Debugging + Testing + TestSuite
+Iniyan Chelladurai,20+,35+,Planning + UART + Debugging
+Ryan Hoffman,20+,30+,Planning + Mailbox Function Logic + Debugging

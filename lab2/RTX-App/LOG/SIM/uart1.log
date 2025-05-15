@@ -1,0 +1,172 @@
+k_mem_init: algo = 5
+k_mpool_init: algo = 5
+k_mpool_init: RAM range: [0x10007000, 0x10007fff].
+k_mpool_init: algo = 5
+k_mpool_init: RAM range: [0x2007c000, 0x20083fff].
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+G99-TS210: START
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+==============Task NULL: TID = 0 ===============
+==============Task NULL: TID = 0 ===============
+==============Task NULL: TID = 0 ===============
+==============Task NULL: TID = 0 ===============
+==============Task NULL: TID = 0 ===============
+G99-TS210-LOG2: TID = 1, task_alloc_test1: starting test0
+G99_test: LOG - Attempt to create user task 0. 
+k_tsk_create: entering...
+task = 0x2007c3d8, task_entry = 0x2f7d, prio=128, stack_size = 512
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+k_tsk_get: entering...
+tid = 3, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully created user task 0. 
+G99_test: LOG - Attempt to create user task 1. 
+k_tsk_create: entering...
+task = 0x2007c3d9, task_entry = 0x2f7d, prio=128, stack_size = 512
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+k_tsk_get: entering...
+tid = 4, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully created user task 1. 
+G99_test: LOG - Attempt to create user task 2. 
+k_tsk_create: entering...
+task = 0x2007c3da, task_entry = 0x2f7d, prio=128, stack_size = 512
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+k_tsk_get: entering...
+tid = 5, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully created user task 2. 
+G99_test: LOG - Attempt to create user task 3. 
+k_tsk_create: entering...
+task = 0x2007c3db, task_entry = 0x2f7d, prio=128, stack_size = 512
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+k_tsk_get: entering...
+tid = 6, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully created user task 3. 
+G99_test: LOG - Attempt to create user task 4. 
+k_tsk_create: entering...
+task = 0x2007c3dc, task_entry = 0x2f7d, prio=128, stack_size = 512
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+k_tsk_get: entering...
+tid = 7, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully created user task 4. 
+G99_test: LOG - Attempt to create user task 5. 
+k_tsk_create: entering...
+task = 0x2007c3dd, task_entry = 0x2f7d, prio=128, stack_size = 512
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+k_tsk_get: entering...
+tid = 8, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully created user task 5. 
+G99_test: LOG - Attempt to create user task 6. 
+k_tsk_create: entering...
+task = 0x2007c3de, task_entry = 0x2f7d, prio=128, stack_size = 512
+	 ALLOC1 SIZE 0X200 
+	TREE LEVEL TO ALLOC 0x6
+k_tsk_get: entering...
+tid = 9, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully created user task 6. 
+G99_test: LOG - Attempt to create user task 7. 
+k_tsk_create: entering...
+task = 0x2007c3df, task_entry = 0x2f7d, prio=128, stack_size = 512
+k_tsk_get: entering...
+tid = 222, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - FAIL - Failed to create user task 7. 
+G99_test: LOG - Attempt to create user task 8. 
+k_tsk_create: entering...
+task = 0x2007c3e0, task_entry = 0x2f7d, prio=128, stack_size = 512
+k_tsk_get: entering...
+tid = 163, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - FAIL - Failed to create user task 8. 
+G99_test: LOG - Attempt to create user task 9. 
+k_tsk_create: entering...
+task = 0x2007c3e1, task_entry = 0x2f7d, prio=128, stack_size = 512
+k_tsk_get: entering...
+tid = 170, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - FAIL - Failed to create user task 9. 
+G99_test: LOG - Attempt to create user task 10. 
+k_tsk_create: entering...
+task = 0x2007c3e2, task_entry = 0x2f7d, prio=128, stack_size = 512
+k_tsk_get: entering...
+tid = 173, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - FAIL - Failed to create user task 10. 
+G99_test: LOG - Attempt to create user task 11. 
+k_tsk_create: entering...
+task = 0x2007c3e3, task_entry = 0x2f7d, prio=128, stack_size = 512
+k_tsk_get: entering...
+tid = 222, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - FAIL - Failed to create user task 11. 
+G99_test: LOG - Attempt to create user task 12. 
+k_tsk_create: entering...
+task = 0x2007c3e4, task_entry = 0x2f7d, prio=128, stack_size = 512
+k_tsk_get: entering...
+tid = 162, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - FAIL - Failed to create user task 12. 
+G99-TS210-LOG: Test[0]-[0]: Create enough tasks to reach MAX_TASKS.
+G99-TS210-LOG: Test[0]-[0]: result = 1.
+G99_test: PASS - Create up to MAX TASKS tasks
+k_tsk_create: entering...
+task = 0x2007c3e5, task_entry = 0x2f7d, prio=130, stack_size = 512
+G99-TS210-LOG: Test[1]-[0]: Create a MAX_TASKS + 1 task.
+G99-TS210-LOG: Test[1]-[0]: result = 1.
+G99_test: PASS - Failed to create MAX TASKS + 1 tasks
+G99-TS210-LOG2: TID = 1, priv_task1: yielding cpu
+k_tsk_exit: entering...
+k_tsk_exit: entering...
+k_tsk_exit: entering...
+k_tsk_exit: entering...
+k_tsk_exit: entering...
+k_tsk_exit: entering...
+k_tsk_exit: entering...
+G99_test: LOG - Check user task 0 is DORMANT. 
+k_tsk_get: entering...
+tid = 3, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully exited user task 0. 
+G99_test: LOG - Check user task 1 is DORMANT. 
+k_tsk_get: entering...
+tid = 4, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully exited user task 1. 
+G99_test: LOG - Check user task 2 is DORMANT. 
+k_tsk_get: entering...
+tid = 5, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully exited user task 2. 
+G99_test: LOG - Check user task 3 is DORMANT. 
+k_tsk_get: entering...
+tid = 6, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully exited user task 3. 
+G99_test: LOG - Check user task 4 is DORMANT. 
+k_tsk_get: entering...
+tid = 7, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully exited user task 4. 
+G99_test: LOG - Check user task 5 is DORMANT. 
+k_tsk_get: entering...
+tid = 8, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully exited user task 5. 
+G99_test: LOG - Check user task 6 is DORMANT. 
+k_tsk_get: entering...
+tid = 9, buffer = 0x2007c394.
+G99_test: INTERMEDIATE - PASS - Succesfully exited user task 6. 
+G99-TS210-LOG: Test[2]-[0]: Create enough tasks to reach MAX_TASKS.
+G99-TS210-LOG: Test[2]-[0]: result = 1.
+G99_test: PASS - Successfully exited 7 user tasks
+k_tsk_create: entering...
+task = 0x2007c3e5, task_entry = 0x2f7d, prio=130, stack_size = 16777216
+	 ALLOC1 SIZE 0X1000000 
+G99-TS210-LOG: Test[3]-[0]: Attempt to create task with more mem than available.
+G99-TS210-LOG: Test[3]-[0]: result = 1.
+G99_test: PASS - Failed to create MAX TASKS + 1 tasks
+G99-TS210: FINISHED
+G99-TS210-LOG: Test 0: 1/1 PASSED. Expected = 0x1, result = 0x1
+G99-TS210-LOG: Test 1: 1/1 PASSED. Expected = 0x1, result = 0x1
+G99-TS210-LOG: Test 2: 1/1 PASSED. Expected = 0x1, result = 0x1
+G99-TS210-LOG: Test 3: 1/1 PASSED. Expected = 0x1, result = 0x1
+G99-TS210: 4/4 test function(s) COMPLETED.
+G99-TS210: 4/4 tests PASSED.
+G99-TS210: 0/4 tests FAILED.
+G99-TS210: END

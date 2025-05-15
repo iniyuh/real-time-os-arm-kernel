@@ -1,0 +1,4 @@
+Name,PlannedHours,RealHours,Contributions
+Ryan Hoffman,20,30+,putting the structures together (create+alloc+dealloc+dump) + debugging all
+Ahsan Nadeem,20,30+,free list structure + debugging all
+Iniyan Chelladurai,20,30+,bitTree data struct + test cases + debugging all
