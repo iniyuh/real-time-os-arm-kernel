@@ -1,69 +1,90 @@
-# Real-Time Operating System Kernel — ARM Cortex-M (ECE 350)
+# real-time-os-arm-kernel
 
-> ⚙️ This custom RTOS kernel, implemented for a simulated ARM Cortex-M3 platform, achieves performance comparable to early Intel x86 CPUs such as the **Intel 80386DX (1985)** — the first 32-bit processor in the x86 line. While the 80386 ran at 16–33 MHz with hardware-supported multitasking and memory segmentation, this project recreates key OS functionality — including thread scheduling, inter-process communication, and memory management — in software, from scratch. It demonstrates the architectural complexity required to support real-time, multi-threaded applications on embedded processors.
+![C](https://img.shields.io/badge/language-C-blue.svg)
+![Platform](https://img.shields.io/badge/target-ARM%20Cortex--M3-red.svg)
+![RTOS](https://img.shields.io/badge/RTOS-Custom%20Kernel-lightgrey.svg)
+![Threads](https://img.shields.io/badge/Multitasking-Preemptive%20%7C%20Cooperative-green)
+![Tools](https://img.shields.io/badge/Tools-Keil%20uVision%2C%20CMSIS-lightgrey)
 
----
-
-## 🧠 Overview
-This project implements a complete real-time operating system (RTOS) kernel in C, targeting the ARM Cortex-M architecture (simulated via the Keil µVision IDE). It builds a foundational, microkernel-style system from the ground up, encompassing memory, scheduling, communication, and hardware abstraction layers.
-
-By the end of the project, the kernel supports dynamic task creation, cooperative and preemptive multitasking, inter-process messaging, and device I/O via UART — all under strict timing and reliability constraints typical of real-time systems.
-
----
-
-## 🔧 Features Implemented
-
-| Subsystem | Description |
-|----------|-------------|
-| **Task Management** | Creation, deletion, and context-switching for multiple tasks. Maintains task control blocks (TCBs) and enforces privilege separation. |
-| **Scheduler** | Cooperative and preemptive round-robin scheduler using SysTick and PendSV interrupts. Efficient context switching. |
-| **Memory Management** | Custom dynamic memory allocator supporting variable-sized allocation and deallocation with fragmentation handling. |
-| **Inter-Process Communication (IPC)** | Mailbox system supporting blocking/non-blocking message sending and receiving. |
-| **System Calls & Trap Handling** | User programs invoke kernel services via SVC (Supervisor Call) exceptions. Includes argument marshalling and privilege-level enforcement. |
-| **UART Integration** | Device driver for UART0 to support basic I/O, user interaction, and keyboard command decoding. Supports interrupt-driven input. |
-| **Command Interface** | Kernel Command Decoder (KCD) for parsing and dispatching CLI commands from user tasks. |
-| **Tree-Based Structures** | Efficient internal message/mailbox/task storage via custom balanced-tree data structures. |
-| **Logging** | Basic logging and debugging support with serial output, useful for testing, timing, and traceability. |
+A real-time operating system kernel built from scratch in C for ARM Cortex-M3. Implements preemptive scheduling, memory management, message passing, UART I/O, and system calls in a microkernel-style architecture.
 
 ---
 
-## 🛠 Technical Stack
-- **Language:** C (CMSIS-compliant, hardware-adjacent style)
-- **Target:** ARM Cortex-M3 (via Keil µVision)
-- **Architecture:** Microkernel design with preemptive scheduler
-- **Interrupts:** SysTick for timer; PendSV for context switching; UART0 for I/O
-- **Tools:** Keil µVision IDE, semihosted debugging, project scripts
+## Features
+
+| Subsystem             | Description                                             |
+| --------------------- | ------------------------------------------------------- |
+| **Task Management**   | Context switching, TCB tracking, task creation/deletion |
+| **Scheduler**         | Round-robin scheduler with SysTick and PendSV handling  |
+| **Memory Management** | Heap allocator with support for dynamic block reuse     |
+| **IPC**               | Mailbox-based message passing between tasks             |
+| **System Calls**      | SVC handler for safe kernel-user transitions            |
+| **UART I/O**          | UART0 driver with interrupt-based input handling        |
+| **Command Decoder**   | CLI parsing with registered command callbacks           |
+| **Tree Structures**   | Internal tree usage for task/message storage            |
+| **Debug Logging**     | UART-based runtime logging for traceability             |
 
 ---
 
-## 📂 Repository Structure
+## Platform and Tooling
+
+* **Language:** C (CMSIS-style embedded systems style)
+* **Target CPU:** ARM Cortex-M3 (simulated via Keil µVision)
+* **Architecture:** Microkernel layout with user/kernel mode separation
+* **Interrupts:** SysTick, PendSV, UART0 IRQs
+* **Toolchain:** Keil µVision IDE (project files included)
+
+---
+
+## Project Structure
 
 ```
-.
-├── lab1/                   # Initial kernel boot, memory setup, task management basics
-├── lab2/                   # Expanded with message passing, syscall trap handling
-├── lab3/                   # Final full kernel: scheduler, UART I/O, user programs
-├── scripts/               # Project utilities
+real-time-os-arm-kernel/
+├── lab1/         # Kernel bootstrap, task init
+├── lab2/         # Memory + IPC layer
+├── lab3/         # Final scheduler, UART I/O, user programs
+├── scripts/      # Build and project utilities
+└── README.md     # This file
 ```
-Each lab builds on the previous to form a complete, progressively evolved kernel.
 
 ---
 
-## ✅ Testing & Validation
-- **Preemptive task switching** tested using timer-driven interrupts
-- **Message passing** validated with multiple concurrent sender/receiver threads
-- **Memory allocator** verified with edge-case allocations and fragmentation scenarios
-- **UART and CLI** tested interactively and under load with multiple simultaneous inputs
+## Build & Test
 
-Test coverage was ensured by embedded test programs, manual scenarios, and system-level integration tests across each lab stage.
+Open `.uvprojx` project files with Keil µVision to compile and deploy. Run UART-based tests using serial terminal emulation. Each lab folder incrementally adds kernel features.
 
 ---
 
-## 💡 Educational Significance
-This kernel replicates core behaviors of real-world embedded operating systems and illustrates the full control stack from user task to hardware. It is a foundational RTOS implementation that demonstrates understanding of:
-- Context switching and CPU state management
-- Safe preemptive multitasking
-- Device driver and interrupt integration
-- Systems programming in constrained environments
+## Architecture Overview
 
-The resulting system is robust, efficient, and realistic — suitable for further extension into a production-grade microcontroller OS.
+```
++---------------------------+
+|     User Task Layer       |
+|  CLI apps, message senders |
++---------------------------+
+            ↓
++---------------------------+
+|    System Call Layer      |
+|  SVC handler + validation |
++---------------------------+
+            ↓
++---------------------------+
+|      Scheduler + IPC      |
+|   Round-robin, mailboxes  |
++---------------------------+
+            ↓
++---------------------------+
+|   Memory + UART Drivers   |
+|  Heap mgmt, interrupt I/O |
++---------------------------+
+            ↓
++---------------------------+
+|     ARM Cortex-M3 SoC     |
++---------------------------+
+```
+
+---
+
+## Summary
+
+This project implements a full real-time kernel on bare-metal ARM, emphasizing safe context switching, memory safety, and task synchronization. Ideal for embedded systems, OS-level design, and real-time application experience.
